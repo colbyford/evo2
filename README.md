@@ -179,6 +179,32 @@ The OpenGenome2 dataset used for pretraining Evo2 is available on [HuggingFace ]
 
 Evo 2 was trained using [Savanna](https://github.com/Zymrael/savanna), an open source framework for training alternative architectures.
 
+## Docker
+
+You can also run the model using Docker:
+
+1. Build the Docker image locally:
+
+   ```bash
+   docker build -t evo2 .
+   ```
+
+   Or pull the pre-built image from Docker Hub:
+
+   ```bash
+   docker pull cford38/evo2:latest
+   ```
+
+2. Run the Docker container:
+
+   ```bash
+   docker run --gpus all --rm --name evo2 -it evo2 /bin/bash
+   # docker run --gpus all --rm --name evo2 -it cford38/evo2:latest /bin/bash
+   ```
+> [!NOTE]
+> This image does not include all of the model weights, which will be downloaded the first time you run Evo2 inside in the container.
+
+
 ## Citation
 
 If you find these models useful for your research, please cite the relevant papers
